@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.box{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    transition: .5s; /* 过渡 */ 
+}
