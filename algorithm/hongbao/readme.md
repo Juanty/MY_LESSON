@@ -19,11 +19,14 @@ function hongbao(total,num){
 - Math 是数学对象， 一切皆对象
   Math.random() Date Reg NodeList Array
   Function {}
+- another note
+  Math.random() Date Reg NodeList Array Function {} Math.random() [0,1)的随机浮点数 
+  Math.random()*10 [0,10)的随机浮点数 Math.random()*82+18 [18,100)的随机浮点数
 
 - Math.random(); => 随机数
-  Math.floor(Math.random()*10) => 
+  Math.floor(Math.random()*10) => Math.floor(Math.random()*(max-min))+min
   Math.floor(2.3) => 向下取整
   Math.round(23.3) => 四舍五入
   Math.ceil(23.5) => 向上取整
 
-- Math.floor(Math.random()*)
+- Math.floor() Math.round() Math.ceil()
