@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #dadada;
+}
+.fallImg{
+    position: absolute;
+    right: 50px;
+    width: 476px;
+    height: 296px;
+    background-image: url(./timg.jpg);
+    background-size: 100%;
+    border: solid 5px #e2b900;
+    box-shadow: 10px 8px  15px #999999;
+}
+
+.all-image{
+    filter: brightness(1);
+    width: 714px;
+    height: 444px;
+    margin: 100px 0 0 50px;
+    position: relative;
+    box-shadow: 0 0  15px #999999,0 0  15px #999999,0 0  15px #999999,0 0  15px #999999;
+}
+.blink{
+    animation: bin 2s linear;
+}
+@keyframes bin{
+    0%{filter: brightness(0.7)}
+    30%{filter: brightness(4)}
+    80%{filter: brightness(1.4)}
+    100%{filter: brightness(1)}
+}
+.image-item{
+    transform: scale(0.99);
+    position: absolute;
+}
+.img{
+    width: 238px;
+    height: 148px;
+    background-image: url(./timg.jpg);
+    background-size: 300% 300%;
+}
+.img:hover{
+    z-index: 2;
+    box-shadow: 0 0  20px #ff0000 inset;
+}
+.item0{
+    background-position: 0 0 ;
+}
+.item1{
+    background-position: -238px 0 ;
+}
+.item2{
+    
+    background-position: -476px 0 ;
+}
+.item3{
+    background-position: 0 -148px ;
+}
+.item4{
+    background-position: -238px -148px ;
+}
+.item5{
+    background-position: -476px -148px ;
+}
+.item6{
+    background-position: 0px -296px ;
+}
+.item7{
+    background-position: -238px -296px ;
+}
+.item8{
+    background-position: -476px -296px ;
+}
+.empty{
+    z-index: -1;
+    background-image: none;
+    box-shadow: #999999 0 0 50px inset;
+}
+.scroll0{
+    left: 0;
+    top: 0;
+}
+.scroll1{
+    left: 238px;
+    top: 0;
+}
+.scroll2{
+    left: 476px;
+    top: 0;
+}
+.scroll3{
+    left: 0;
+    top: 148px;
+}
+.scroll4{
+    left: 238px;
+    top: 148px;
+}
+.scroll5{
+    left: 476px;
+    top: 148px;
+}
+.scroll6{
+    left: 0;
+    top: 296px;
+}
+.scroll7{
+    left: 238px;
+    top: 296px;
+}
+.scroll8{
+    left: 476px;
+    top: 296px;
+}
