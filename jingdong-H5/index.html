@@ -12,17 +12,19 @@
 <body>
     <div class="swiper-container">
     <div class="swiper-wrapper">
+        <!-- 第一屏 -->
         <div class="swiper-slide p1 swiper-slide-active">
             <div class="light"></div>
             <div class="slogon">这是一家以速度见长的公司</div>
         </div>
-        <div class="swiper-slide p2 swiper-slide-next" id="J-swiper-scene-2" >
+        <!-- 第二屏 -->
+        <div class="swiper-slide p2 swiper-slide-next" id="J-swiper-scene-2">
           <div class="bg"></div>
           <div class="light"></div>
           <div class="dog"></div>
           <div class="text text-top">The speed of life beginning</div>
           <div class="text text-bottom">快才拥有可能，这是一家以速度见长的公司</div>
-          <div class="num font-steelfib odometer odometer-auto-theme" id="J-num-1" data-depth="0.2">
+          <div class="num font-steelfib odometer odometer-auto-theme" id="J-num-1">
               <div class="odometer-inside">
                   <span class="odometer-digit">
                       <span class="odometer-digit-spacer">8</span>
@@ -68,18 +70,88 @@
               </div>
           </div>
         </div>
-        <div class="swiper-slide">Slide 3</div>
-</div>
+        <!-- 第三屏 -->
+        <div class="swiper-slide">
+            <div class="swiper-slide p3 swiper-slide-active">
+                <div class="bg"></div>
+                <div class="light-1"></div>
+                <div class="dog"></div>
+                <div class="light-2"></div>
+                <div class="text text-top">The glory of the human race</div>
+                <div class="text text-bottom">快为满足期待，专属定制成长方案，要你不负众望</div>
+                <div class="num font-steelfib odometer odometer-auto-theme" id="J-num-2">
+                    <div class="odometer-inside">
+                        <span class="odometer-digit">
+                            <span class="odometer-digit-spacer">8</span>
+                            <span class="odometer-digit-inner">
+                                <span class="odometer-ribbon">
+                                    <span class="odometer-ribbon-inner">
+                                        <span class="odometer-value">1</span>
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                        <span class="odometer-digit">
+                            <span class="odometer-digit-spacer">8</span>
+                            <span class="odometer-digit-inner">
+                                <span class="odometer-ribbon">
+                                    <span class="odometer-ribbon-inner">
+                                        <span class="odometer-value">0</span>
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                        <span class="odometer-formatting-mark odometer-radix-mark">.</span>
+                        <span class="odometer-digit">
+                            <span class="odometer-digit-spacer">8</span>
+                            <span class="odometer-digit-inner">
+                                <span class="odometer-ribbon">
+                                    <span class="odometer-ribbon-inner">
+                                        <span class="odometer-value">4</span>
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 第八屏 -->
+        <div class="swiper-slide">
+            <div class="swiper-slide p8 swiper-slide-active" style="height: 667px;">
+                <canvas id="J-particle-canvas" width="375" height="667"></canvas>
+                <div class="logo-ran">燃</div>
+                <div class="text-slogon">更快到达你想要的未来</div>
+                <div class="cube-1">
+                    <span></span>
+                </div>
+                <div class="cube-cnt-2">
+                    <div class="cube-2">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="cube-cnt-3">
+                    <div class="cube-3">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="text-title">京东2018校园招聘</div>
+                <div class="text-detail">招聘人群： 2018年毕业
+                    <br>全日制本科、硕士、博士</div>
+                <div class="logo-jd">京东招聘</div>
+            </div>
+        </div>
+    </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
 <script src="./lib/odometer.min.js"></script>
 <script> 
-  const p2Num = document.querySelector('.p2 .num');
-    od = new Odometer({
-        el: p2Num,
-        value: 1.618,
-        format: '(,ddd).ddd',
-        theme: 'default'
-    });
+    const p2Num = document.querySelector('.p2 .num');
+        od = new Odometer({
+            el: p2Num,
+            value: 1.618,
+            format: '(,ddd).ddd',
+            theme: 'default'
+        });
     var mySwiper = new Swiper('.swiper-container', {
         direction: 'vertical', // 垂直切换选项
         on: {
@@ -89,7 +161,24 @@
                 }
             },
         }
-    })        
+    }) 
+    const p3Num = document.querySelector('.p3 .num');
+        od = new Odometer({
+            el: p3Num,
+            value: 0.1,
+            format: '(,ddd).d',
+            theme: 'default'
+        });
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'vertical', // 垂直切换选项
+        on: {
+            slideChangeTransitionEnd: function () {
+                if (this.activeIndex === 1) {
+                    p3Num.innerHTML = 10.4;
+                }
+            },
+        }
+    })    
   </script>
 </body>
 </html>
