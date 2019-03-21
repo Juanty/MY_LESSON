@@ -16,14 +16,16 @@
             background-color: #aaa;
         }
         .content{
-            width: 100%;
-            /* padding: 0 200px; */
+            /* width: 100%; */
+            padding: 0 200px;
+            /* overflow: hidden; */
             /* float: left; */
+            display: table;
         }
         .text{
             text-align: center;
-            /* font-size: 50px; */
-            /* line-height: 200px; */
+            font-size: 50px;
+            line-height: 200px;
         }
         .main{
             float: left;
@@ -46,12 +48,16 @@
             height: 200px;
             background-color: blue;
             margin-left: -200px;
-            /* position: relative; */
-            /* left: 200px; */
+            position: relative;
+            left: 200px;
         }
-        .clearFix{
-            float: left;
-        }
+        .clearFix::after{
+            content:".";
+            clear: both;
+            display: block;
+            height: 0;
+            visibility: hidden;
+          }
     </style>
 </head>
 <body>
@@ -60,7 +66,7 @@
         <div class="main text">main</div>
         <div class="left text">left</div>
         <div class="right text">right</div>
-        <div style="clear: left"></div> 
+        <!-- <div style="clear: left"></div>  -->
         <!-- <div class="clear: both"></div> -->
     </div>
     <footer>footer</footer>
