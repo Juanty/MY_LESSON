@@ -15,10 +15,6 @@
                 <td>name</td>
                 <td>age</td>
             </tr>
-            <tr>
-                <td>name</td>
-                <td>age</td>
-            </tr>
         </thead>
         <tbody id="tbody">
             <tr>
@@ -38,14 +34,27 @@
             age: '18'
         };
 
-        const people = {
-            name: '韩梅梅',
-            age: '18'
-        }
-        {
-            name: '李雷',
-            age: '18'
-        }
+        const people = [{
+                name: '韩梅梅',
+                age: '18'
+            },
+            {
+                name: '李雷',
+                age: '18'
+            }
+        ]
+        let htmlString = people
+            .map(function (person) {
+                return `
+      <tr>
+        <td>${person.name}</td>
+        <td>${person.age}</td>
+      </tr>
+      `
+            });
+        htmlString = htmlString.join('');
+        tbody.innerHTML = htmlString;
+
         //   <tr>
         //     <td>name</td>
         //     <td>age</td>
