@@ -26,7 +26,7 @@
                 <div class="movie-container">
                     <div class="movie-cover">
                         <a href="#" class="link">
-                            <img class='img' src="./images/header-bg.jpg" alt="" id="moviePic">
+                            <img class='img' src="" alt="" id="moviePic">
                         </a>
                     </div>
                     <div class="movie-content">
@@ -43,8 +43,7 @@
                                     <span class="rating-score"></span>
                                 </div>
                                 <div class="score-num">
-                                    (
-                                    <span></span>)人评分
+                                    (<span></span>人评)
                                 </div>
                             </div>
                         </div>
@@ -56,11 +55,11 @@
     <script>
         (function () {
             $.ajax({
-                url: 'https://www.easy-mock.com/mock/5ca458114767c3737055c91c/example/cat/demo',
+                url: 'https://www.easy-mock.com/mock/5ca458114767c3737055c91c/example/cat-eyes-movie/demo',
                 type: 'get',
                 success: function (res) {
                     console.log(res)
-                    // $('#moviePic').attr('src', res.data.moviePic)
+                    $('#moviePic').attr('src', res.data.moviePic)
                     $('.movie-content .movie-name span').html(res.data.name)
                     $('.movie-content .movie-ename span').html(res.data.nameEnglish)
                     star(res.data.star)
