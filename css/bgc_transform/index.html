@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .icon {
+            display: inline-block;
+            width: 16px;
+            height: 20px;
+            background-image: url(sprite_icons.png);
+            background-color: #34538b;
+            /* 该颜色控制图标的颜色 */
+        }
+
+        .icon1 {
+            background-position: 0 0;
+        }
+
+        .icon2 {
+            background-position: -20px 0;
+        }
+
+        .icon3 {
+            background-position: -40px 0;
+        }
+
+        .icon4 {
+            background-position: -60px 0;
+        }
+
+        .link {
+            margin-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 更改颜色 -->
+    <input id="colorInput" type="color" value="#34538b" autocomplete="off">
+    <p>
+        <i class="icon icon1"></i>
+        <a href="##" class="link">返回</a>
+        <i class="icon icon2"></i>
+        <a href="##" class="link">刷新</a>
+        <i class="icon icon3"></i>
+        <a href="##" class="link">收藏</a>
+        <i class="icon icon4"></i>
+        <a href="##" class="link">展开图片</a>
+    </p>
+    <script>
+        var eleInput = document.getElementById("colorInput"),
+            eleIcons = document.getElementsByTagName("i");
+        eleInput.onchange = function () {
+            var i = 0,
+                l = eleIcons.length;
+            for (; i < l; i += 1) {
+                eleIcons[i].style.backgroundColor = this.value;
+            }
+        };
+    </script>
+
+</body>
+
+</html>
