@@ -78,14 +78,14 @@
             //上拉加载更多
             var loading = false
             $('.page').infinite().on("infinite", function () {
-                if(loading){
+                if (loading) {
                     return;
                 }
                 loading = true;
-                setTimeout(()=>{
+                setTimeout(() => {
                     $('lists').append('<li>新加载的……</li>')
                     loading = false
-                },1500)
+                }, 1500)
             })
         })()
     </script>
