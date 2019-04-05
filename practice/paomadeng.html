@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html Lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>跑马灯循环显示古诗词</title>
+	<!-- <author>南昌雅騰:庄子</author> -->
+</head>
+<body>
+	<div id=" zhuangzi" ></div>
+<script language="javascript">
+	var arr=[
+		{"title":"君不見，黄河之水天上来，奔流到海不复回。"},
+		{"title":"君不見，高堂明鏡悲白发，朝如青丝暮成雪。"},
+		{"title":"人生得意須尽欢，莫使金樽空対月。"},
+		{"title":"天生我材必有用，千金散尽还复来。"},
+		{"title":"烹羊宰牛且为乐，会須一飲三百杯。"},
+		{"title":"岑夫子，丹丘生，将进酒，杯莫停。"},
+		{"title":"钟鼓鐕玉不足貴，但愿長醉不复醒。"},
+		{"title":"陈王昔吋宴平乐，斗酒十千恣欢谑。"},
+		{"title":"主人何为言少銭，径須沽取对君酌。"},
+		{"title":"五花马，千金袤，呼儿将出換美酒；与尓同銷万古愁。"}
+	];
+	var t;
+	var i=0;
+	function rotateFlicker() {
+		if(i == arr. length) {
+			i =0;
+		}
+		word = arr[i]. title;
+		len = (word. length)*100 + 2000; //显示完一行，停止2秒再执行
+		index = 0;
+		printWord();
+		setTimeout("rotateFlicker()",  len);
+		i++;
+	}
+	function printWord(){ //打印
+		document. getElementById(" zhuangzi"). innerText = word. substring(0, index++) ;
+		if(index <= word. length){
+			setTimeout("printWord()", 200);
+		}
+	}
+	rotateFlicker();
+</script>
+</body>
+</html>
+
+
+
