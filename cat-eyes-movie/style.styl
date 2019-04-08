@@ -1,3 +1,4 @@
+// stylus -w style.styl -o style.css
 $hdbg_color = #e54847
 $font_color_white = #ffffff
 html,body
@@ -6,6 +7,11 @@ html,body
   display flex
 .flex1
   flex 1
+.section-til
+  font-size 17px
+  color #000
+.action-list.section-til
+  padding-left 0.4rem
 .nav
   height 1.067rem
   font-size 18px
@@ -179,9 +185,82 @@ html,body
           border-width 0 1px 1px 0
           box-sizing border-box
           transform rotateZ(45deg)
+          transition transform .5s
         .icon-chevron__down.up
           transform rotateZ(-135deg)
-
+  .section-seperate
+    .movie-celebrities
+      width 100%
+      padding 0.3rem 0.3rem 0.1rem 0.3rem
+      white-space nowrap
+      overflow-x scroll
+      box-sizing border-box
+      li
+        text-align center
+        display inline-block
+        padding .04rem
+        .link
+          color #000000
+          .movie-celebrities__pic
+            width 1.7334rem
+            height 2.4rem
+            margin .05rem
+            img
+              width 100%
+          span
+            display block
+            font-size .2rem
+            text-overflow ellipsis
+            overflow hidden
+            white-space nowrap
+          .movie-celebrities__roles
+            color #999
+  .movie-booking
+    padding-bo  ttom 0.2rem
+    .weui-flex
+      text-align center
+      .placeholder
+        span
+          font-size 24px
+          color #d96a3d
+        p
+          color #bababa
+          margin-top 0.1rem
+  .movie-photo
+    .movie-photo__lists
+      font-size 0
+      width 100%
+      padding 0.3rem 0.3rem 0.2rem
+      overflow-x scroll
+      white-space: nowrap
+      box-sizing border-box
+      .stage-img-container
+        margin-right 0.13333rem
+        display inline-block
+        width 2.4rem
+        height 1.867rem
+        .movie-celebrities__pic
+          width 100%
+          height 100%
+          img
+            width 100%
+            height 100%
+        &:after
+            content ''
+            position absolute
+            right 6.45rem
+            bottom 0.3rem
+            width 0.667rem
+            height 0.667rem
+            background-image url(./images/bofang.png)
+            background-size 100% auto
+            border-radius 100%
+            opacity .7
+        &:first-child
+          width 3.3334rem
+          height 1.867rem
+        &:last-child
+          margin-right 0
 #toast
   display none
               
