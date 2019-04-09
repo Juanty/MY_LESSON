@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery源码分析 - 旅梦源码课</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <img src="https://pic.36krcnd.com/201904/09061934/9axl9yt10w5w6kq6!heading" alt="" onload="imgLoaded();" />
+    <!-- <script src="https://cdn.bootcss.com/jquery/2.1.2/jquery.min.js"></script> -->
+    <script>
+        // 当html， css很大的时候
+        // http请求? 本身, img, script
+        function imgLoaded(){
+            console.log('图片加载完成');
+        }
+        window.onload = function(){
+            console.log('页面加载完成');
+        }
+        // document.addEventListener('DOMContentLoaded', function(){
+        //     console.log('DOM Ready');
+        //     // js开始的地方
+        // });
+        // jQeury —— API简约， 更好的兼容性
+        // DOMContentLoaded事件在IE中有兼容性问题
+
+        function JQueryEle(ele){
+            this.ele = ele;
+        }
+        JQueryEle.prototype.html = function(str)
+        {
+            this.ele.innerHTML = str;
+        }
+
+        function $(selector){
+            if(typeof selector === 'function')
+            {
+                document.addEventListener('DOMContentLoaded', selector);
+            }else if(typeof selector === 'string'){
+                // $函数, html方法
+                // 放弃prototype写法
+                // html方法来自于节点对象
+                // 2. $函数运行有返回值, 是一个对象
+                // const ele =  new  jQueryEle(ele);
+                // return ele;
+               const ele = document.querySelector(selector);
+               if(ele){
+                // JQueryEle对象
+                   return new JQueryEle(ele);
+               }
+                // $('#root').html()
+                // querySelector(selector).innerHTML
+            }
+        }
+
+        $(function(){
+            console.log('DOM Ready');
+            $('#root').html('<p>萨卡受打击啊收到了</p>');
+        });
+    </script>
+</body>
+</html>
