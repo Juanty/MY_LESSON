@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>掘金 点赞 取消点赞</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">
+            <img class="icon" src="https://b-gold-cdn.xitu.io/v3/static/img/zan.e9d7698.svg" alt="">
+            <span class="count">98</span>
+            <!-- <img src="https://b-gold-cdn.xitu.io/v3/static/img/zan-active.930baa2.svg" alt=""> -->
+        </div>
+    </div>
+    <script>
+        const item = document.querySelector('.item');
+        const icon = document.querySelector('.icon');
+        const count = document.querySelector('.count');
+        const like = 'https://b-gold-cdn.xitu.io/v3/static/img/zan-active.930baa2.svg';
+        const disLike = 'https://b-gold-cdn.xitu.io/v3/static/img/zan.e9d7698.svg';
+        // 默认是为点赞时候的状态
+        let flag = false;
+        item.addEventListener('click', () =>{
+            if(flag){
+                icon.src = disLike;
+                countNum -= 1;
+            }else{
+                icon.src = like;
+                countNum += 1;
+            }
+            let countNum = count.innerHTML;
+            countNum = parseInt(countNum);
+            console.log(countNum);
+            count.innerHTML = countNum;
+            count.classList.add('active');
+            flag = !falg;
+        })
+    </script>
+</body>
+
+</html>
