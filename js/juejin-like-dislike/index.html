@@ -26,19 +26,19 @@
         // 默认是为点赞时候的状态
         let flag = false;
         item.addEventListener('click', () =>{
+            let countNum = count.innerHTML;
+            countNum = parseInt(countNum);
             if(flag){
                 icon.src = disLike;
                 countNum -= 1;
+                count.classList.remove('active');
             }else{
                 icon.src = like;
                 countNum += 1;
+                count.classList.add('active');
             }
-            let countNum = count.innerHTML;
-            countNum = parseInt(countNum);
-            console.log(countNum);
             count.innerHTML = countNum;
-            count.classList.add('active');
-            flag = !falg;
+            flag = !flag;
         })
     </script>
 </body>
