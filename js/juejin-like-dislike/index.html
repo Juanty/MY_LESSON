@@ -11,45 +11,66 @@
 
 <body>
     <div class="container">
-        <div class="item">
+        <div class="item" data-flag='false'>
             <img class="icon" src="https://b-gold-cdn.xitu.io/v3/static/img/zan.e9d7698.svg" alt="">
             <span class="count">98</span>
             <!-- <img src="https://b-gold-cdn.xitu.io/v3/static/img/zan-active.930baa2.svg" alt=""> -->
         </div>
-        <div class="item">
+        <div class="item" data-flag='false'>
             <img class="icon" src="https://b-gold-cdn.xitu.io/v3/static/img/zan.e9d7698.svg" alt="">
             <span class="count">56</span>
             <!-- <img src="https://b-gold-cdn.xitu.io/v3/static/img/zan-active.930baa2.svg" alt=""> -->
         </div>
-        <div class="item">
+        <div class="item" data-flag='false'>
             <img class="icon" src="https://b-gold-cdn.xitu.io/v3/static/img/zan.e9d7698.svg" alt="">
             <span class="count">465</span>
             <!-- <img src="https://b-gold-cdn.xitu.io/v3/static/img/zan-active.930baa2.svg" alt=""> -->
         </div>
     </div>
     <script>
-        const item = document.querySelector('.item');
-        const icon = document.querySelector('.icon');
-        const count = document.querySelector('.count');
+        // // count
+        // const arr = [98, 999, 789];
+        // const arr = [{
+        //     count: 98, flag: false
+        // },{
+        //     count: 999, flag: false
+        // },{
+        //     count: 789, flag: false
+        // }];
+        // // 生成 html css 事件
+
+        const items = document.querySelectorAll('.item');
         const like = 'https://b-gold-cdn.xitu.io/v3/static/img/zan-active.930baa2.svg';
         const disLike = 'https://b-gold-cdn.xitu.io/v3/static/img/zan.e9d7698.svg';
         // 默认是为点赞时候的状态
         let flag = false;
-        item.addEventListener('click', () =>{
-            let countNum = count.innerHTML;
-            countNum = parseInt(countNum);
-            if(flag){
-                icon.src = disLike;
-                countNum -= 1;
-                count.classList.remove('active');
-            }else{
-                icon.src = like;
-                countNum += 1;
-                count.classList.add('active');
-            }
-            count.innerHTML = countNum;
-            flag = !flag;
-        })
+        for (let i = 0; i < items.length; i++) {
+            items[i].addEventListener('click', () => {
+                // document.querySelectorAll  node.querySelector
+                // items[i].dataset{}
+                let flag = items[i].dataset.flag;
+                console.log(flag);
+                const icon = items[i].querySelector('.icon');
+                const count = items[i].querySelector('.count');
+                // null.src
+                let countNum = count.innerHTML;
+                countNum = parseInt(countNum);
+                if (flag === 'true') {
+                    icon.src = disLike;
+                    countNum -= 1;
+                    flag = 'false';
+                    // count.classList.remove('active');
+                } else {
+                    icon.src = like;
+                    countNum += 1;
+                    flag = 'true';
+                    // count.classList.add('active');
+                }
+                count.classList.toggle('active');
+                count.innerHTML = countNum;
+                items[i].dataset.flag = flag;
+            })
+        }
     </script>
 </body>
 
