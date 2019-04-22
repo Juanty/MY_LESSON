@@ -114,3 +114,49 @@
   height: 100%;
   object-fit: cover;
 }
+@media only screen and (max-width: 767px) {
+  .ui.hero .item {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .ui.hero .item .content {
+    height: auto;
+    color: #000;
+    align-items: center;
+    justify-content: center;
+    order: 2;
+  }
+  .ui.hero .item img {
+    order: 1;
+    position: inherit;
+    height: auto;
+  }
+  .ui.hero .header {
+    font-size: 36px;
+    letter-spacing: 4px;
+  }
+}
+.prev.button,
+.next.button {
+  position: absolute;
+  padding: 0;
+  z-index: 3;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  text-align: center;
+}
+.prev.button.button,
+.next.button.button {
+  top: auto;
+  bottom: 0;
+  margin-bottom: 24px;
+}
+.prev.button {
+  left: 24px;
+}
+.next.button {
+  right: 24px;
+}

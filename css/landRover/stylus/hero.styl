@@ -5,7 +5,7 @@
     position relative
     .content
       display flex
-      align-items: center
+      align-items center
       height 696px
       .ui.container
         position relative
@@ -13,18 +13,18 @@
     .header
       font-size 48px
       font-weight 500
-      color rgba(0,0,0,1)
+      color rgba(0, 0, 0, 1)
       line-height 67px
     .sub.header
       font-size 18px
       font-weight 500
-      color rgba(0,0,0,1)
+      color rgba(0, 0, 0, 1)
       line-height 25px
       letter-spacing 3px
     .description
       font-size 18px
       font-weight 500
-      color rgba(0,0,0,1)
+      color rgba(0, 0, 0, 1)
       line-height 25px
     img
       position absolute
@@ -34,3 +34,24 @@
       margin auto
       height 100%
       object-fit cover
+@media only screen and (max-width: 767px)
+  .ui.hero
+    .item
+      display flex!important
+      flex-direction column
+      align-items center
+      text-align center
+      .content
+        height auto
+        color #000
+        align-items center
+        justify-content center
+        order: 2
+      img
+        order: 1
+        position inherit
+        height auto
+    .header
+      font-size 36px
+      letter-spacing 4px
+    
