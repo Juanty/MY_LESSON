@@ -12,3 +12,12 @@
   create a new branch is quick & simple.
   create a tst branch.
 - git_skills git clone 拉取远程origin代码到本地，再进行版本控制
+ 
+## js 有7个假值
+- undifined
+  null
+  +0
+  -0
+  NaN
+  ""
+  false
