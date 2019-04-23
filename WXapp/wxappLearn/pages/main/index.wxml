@@ -1,2 +1,29 @@
 <!--pages/main/index.wxml-->
-<text>pages/main/index.wxml</text>
+<view class="container">
+  <!-- <view class="test">
+    {{name}}
+    <ul>
+      <li>{{people[0].name}}</li>
+      <li>{{people[1].name}}</li>
+      <li>{{people[2].name}}</li>
+
+      <li wx:for="{{people}}" wx:key="{{index}}">{{item.name}}</li>
+    </ul>
+  </view> -->
+
+  <!-- 轮播图 -->
+  <swiper
+  indicator-dots="true"
+  indicator-color="#eee"
+  indicator-active-color="red"
+  autoplay="true"
+  interval="2000"
+  duration="{{duration}}"
+>
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150" />
+    </swiper-item>
+  </block>
+</swiper>
+</view>
