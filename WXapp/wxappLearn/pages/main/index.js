@@ -11,46 +11,58 @@ Page({
         //   { name: "猛哥" },
         //   { name: "猛哥" }
         // ]
+        city: '南昌',
         imgUrls: [
           'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
           'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
           'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
-        ]
+        ],
+        items: []
       },
     
       /**
        * 生命周期函数--监听页面加载
        */
-      onLoad: function (options) {
-        console.log(1)
+      onLoad: function () {
+        // console.log(1);
+        let that = this;
+        wx.request({
+          url: 'https://www.easy-mock.com/mock/5ca458114767c3737055c91c/example/wx_movie',
+          success: function (res) {
+            console.log(res);
+            that.setData({
+              items: res.data.data.movieList
+            })
+          }
+        })
       },
     
       /**
        * 生命周期函数--监听页面初次渲染完成
        */
       onReady: function () {
-        console.log(2)
+        // console.log(2)
       },
     
       /**
        * 生命周期函数--监听页面显示
        */
       onShow: function () {
-        console.log(3)
+        // console.log(3)
       },
     
       /**
        * 生命周期函数--监听页面隐藏
        */
       onHide: function () {
-        console.log(4)
+        // console.log(4)
       },
     
       /**
        * 生命周期函数--监听页面卸载
        */
       onUnload: function () {
-        console.log(5)
+        // console.log(5)
       },
     
       /**
@@ -71,6 +83,6 @@ Page({
        * 用户点击右上角分享
        */
       onShareAppMessage: function () {
-        console.log(8)
+        // console.log(8)
       }
     })
