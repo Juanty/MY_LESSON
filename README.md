@@ -21,3 +21,6 @@
   NaN
   ""
   false
+- 0 / 1 Number 类型
+  2... bool值类型
+ 
