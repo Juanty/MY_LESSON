@@ -1,0 +1,3 @@
+<van-button 
+  type="warning" block bindtap="upload">
+</van-button>
