@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>灭霸响指</title>
+  <style>
+    #app {
+      font-family: "Avenir", Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-align: center;
+      color: #2c3e50;
+      margin-top: 60px;
+    }
+
+    .main {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .main .gauntlet {
+      height: 100px;
+    }
+
+    .main .gauntlet-item {
+      width: 80px;
+      height: 80px;
+      cursor: pointer;
+    }
+
+    .main #gauntlet-snap {
+      background: transparent url(https://yiliang114.github.io/vue-thanos-snap/images/thanos_snap.png) center left no-repeat;
+      background-position: 0 0;
+    }
+
+    .snaping {
+      -webkit-animation: gauntlet 2.8s steps(47) both;
+      animation: gauntlet 2.8s steps(47) both;
+    }
+
+    @keyframes gauntlet {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: -3760px 0;
+      }
+    }
+
+    .main #gauntlet-reverse {
+      background: transparent url('https://yiliang114.github.io/vue-thanos-snap/images/thanos_reverse.png') center left no-repeat;
+      background-position: 0 0;
+    }
+
+    .main .reversing {
+      -webkit-animation: gauntlet 2.8s steps(47) both;
+      animation: gauntlet 2.8s steps(47) both;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app" class="main">
+    <Snap />
+  </div>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script>
+    // #app 里面支持MVVM
+
+    Vue.component("Snap", {
+      data() {
+        return {
+          heroName: '灭霸',
+          snaping: false,
+          showSnap: true,
+          showReverse: false,
+          reversing: false
+        }
+      },
+      methods: {
+        snapHandle() {
+          this.snaping = true;
+          setTimeout(() => {
+            this.showReverse = true;
+            this.showSnap = false;
+            this.snaping = false;
+          }, 1500);
+        },
+        reverseHandle() {
+          this.reversing = true;
+          setTimeout(() => {
+            this.showReverse = false;
+            this.showSnap = true;
+            this.reversing = false;
+          }, 1500);
+        }
+      },
+      template: `
+        <div class="main">
+          <div class="gauntlet">
+            <div class="gauntlet-wrapper">
+              <div 
+              v-show="showSnap"
+              id="gauntlet-snap"
+              class="gauntlet-item"
+              :class="snaping?'snaping':''"
+              @click="snapHandle"
+              >
+              </div>
+
+              <div id="gauntlet-reverse"
+              v-show="showReverse"
+              class="gauntlet-item"
+              :class="reversing?'reversing':''"
+              @click="reverseHandle"
+              >
+              </div>
+            </div>
+          </div>
+        </div>
+      `
+    });
+    new Vue({
+      el: '#app'
+    });
+  </script>
+</body>
+
+</html>
