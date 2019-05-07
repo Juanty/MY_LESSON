@@ -19,7 +19,7 @@
   show-cancel-button
   bind:close="onClose"
   bind:cancel="closeDialog"
-  bind:confirm="creatGroup"
+  bind:confirm="createGroup"
   title="创建一个群组"
   id="new-group-modal"
  >
