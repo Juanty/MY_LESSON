@@ -6,11 +6,14 @@
       </view>
       我的群组
     </view>
-    <view class='public-item {{index === 0 ? "top" : "" }} {{index === groupList.length - 1 ? "bottom" : "" }}' wx:for='{{groupList}}' wx:key='{{index}}' data-group='{{item}}'></view>
-    <view class='public-item-name'>{{item.name}}</view>
-    <view style='display:flex;align-items:center'>
+    <view class='public-item {{index === 0 ? "top" : "" }} {{index === groupList.length - 1 ? "bottom" : "" }}' wx:for='{{groupList}}' wx:key='{{index}}' data-group='{{item}}'>
+      <view class='public-item-name'>{{item.name}}</view>
+      <view style='display:flex;align-items:center'>
       <image class='creater' src='{{item.createBy.avatarUrl}}' />
       <van-icon name='arrow' style='color:#c6c6c6;display:flex'/>
     </view>
+    </view>
+    
+    
   </view>
 </view>

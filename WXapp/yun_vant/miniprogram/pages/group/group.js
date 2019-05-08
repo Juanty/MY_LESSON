@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    groupList: []
   },
 
   /**
@@ -32,6 +32,7 @@ Page({
       name: 'getGroup',
       data: {},
       success(res) {
+        console.log(res.result)
         self.setData({
           groupList: res.result
         })
