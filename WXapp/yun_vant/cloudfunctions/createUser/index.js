@@ -26,12 +26,16 @@ exports.main = async (event, context) => {
         sex: event.sex
       }
     })
-  }else insertResult = await db.collection('user').add({
-    avatarUrl: event.avatarUrl,
-    nickName: event.nickName,
-    sex: event.sex,
-    name: '',
-    openId: event.userInfo.openId,
-    createTime: new Date()
-  })
+  }else {
+    insertResult = await db.collection('user').add({
+      data: {
+        avatarUrl: event.avatarUrl,
+        nickName: event.nickName,
+        sex: event.sex,
+        name: '',
+        openId: event.userInfo.openId,
+        createTime: new Date()
+      }
+    })
+  }
 }
