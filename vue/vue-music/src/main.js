@@ -6,6 +6,7 @@ import router from './router'
 import fastclick from 'fastclick'
 import VueLazyload from 'vue-lazyload'
 import store from './vuex/store'
+import '../static/css/reset.styl'
 
 import def_lazy_img from '../static/img/loading.gif'
 Vue.use(VueLazyload, {

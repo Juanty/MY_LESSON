@@ -19,7 +19,9 @@ export default {
     return {}
   },
   methods: {
-    leftEvent () {}
+    leftEvent () {
+      this.$store.dispatch('setShowSidebar', true)
+    }
   }
 }
 </script>
