@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import SearchBox from '@/components/searchBox'
+import Search from '@/components/pages/search'
 
 Vue.use(Router)
 
@@ -13,9 +13,9 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/',
-      name: 'SearchBox',
-      component: SearchBox
+      path: '/search',
+      name: 'Search',
+      component: Search
     }
   ]
 })

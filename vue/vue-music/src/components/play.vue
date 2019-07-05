@@ -10,9 +10,7 @@
     >
       <div class="normal-player" v-show="fullScreen">
         <div class="background">
-          <img width="100%" height="100%" 
-          :src="(currentSong.al && currentSong.al.picUrl) || (currentSong.artists && currentSong.artists[0].img1v1Url)" 
-          alt="">
+          <img width="100%" height="100%" :src="(currentSong.al && currentSong.al.picUrl) || (currentSong.artists && currentSong.artists[0].img1v1Url)" alt="">
         </div>
         <!-- 播放页面的头部 -->
         <div class="top">
@@ -32,11 +30,11 @@
             <div class="cd-wrapper" ref="cdWrapper">
               <div class="cd" ref="imageWrapper">
                 <img 
-                :src="(currentSong.al && currentSong.al.picUrl) || (currentSong.artists && currentSong.artists[0].img1v1Url)" 
-                alt=""
-                ref="image"
-                :class="cdCls"
-                class="image"
+                  :src="(currentSong.al && currentSong.al.picUrl) || (currentSong.artists && currentSong.artists[0].img1v1Url)" 
+                  alt=""
+                  ref="image"
+                  :class="cdCls"
+                  class="image"
                 >
               </div>
             </div>
@@ -84,26 +82,26 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
   data () {
     return {
       playList: [1],
       currentSong: [],
       playing: false,
-      currentTime: 3, 
+      currentTime: 3,
       duration: 1,
-      playingLyric: ''
+      playingLyric: '我叹服你的技巧'
     }
   },
   computed: {
-      cdCls () {
-        return this.playing ? 'play' : ''
-      },
-      ...mapGetters([
-        'fullScreen'
-      ])
+    cdCls () {
+      return this.playing ? 'play' : ''
     },
+    ...mapGetters([
+      'fullScreen'
+    ])
+  },
   methods: {
     open () {
       this.$store.dispatch('selectPlaySong', true)
@@ -205,7 +203,7 @@ export default {
               height 100%
               box-sizing border-box
               border-radius 50%
-              border 10px solid rgba(255,255,255,0.1)
+              border 10px solid rgba(255, 255, 255, 0.1)
             .play
               animation rotate 20s linear infinite
         .playing-lyric-wrapper
@@ -217,7 +215,7 @@ export default {
             height px2rem(40px)
             line-height px2rem(40px)
             font-size 14px
-            color hsla(0,0%,100%,0.5)
+            color hsla(0, 0%, 100%, 0.5)
   .mini-player
     display flex
     align-items center
@@ -286,6 +284,8 @@ export default {
       .bottom-progress
         height 100%
         background linear-gradient(#902541, #902444)
+
+
 
 @keyframes rotate
   0%

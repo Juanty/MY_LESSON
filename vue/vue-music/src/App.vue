@@ -36,7 +36,7 @@ export default {
 }
 </script>
 
-<style lang="stylus"> 
+<style lang="stylus">
 @import "./assets/css/function"
 @font-face
   font-family "icon"
