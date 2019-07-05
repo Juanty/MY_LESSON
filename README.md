@@ -15,12 +15,12 @@
  
 ## js 有7个假值
 - undifined
-  null
-  +0
-  -0
-  NaN
-  ""
-  false
+- null
+- +0
+- -0
+- NaN
+- ""
+- false
 - 0 / 1 Number 类型
-  2... bool值类型
+- 2... bool值类型
  
