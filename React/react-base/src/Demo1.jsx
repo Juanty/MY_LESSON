@@ -14,3 +14,37 @@ class Demo1 extends Component {
   }
 }
 export default Demo1;
+
+
+
+class App extends Component {
+  render () {
+    const lists = [
+      {
+        name: 'Tom', 
+        age: 19,
+        school: 'school1'
+      },
+      {
+        name: 'Tom1', 
+        age: 19,
+        school: 'school2'
+      }
+      return(
+        <ul>
+          {
+            lists.map((list, i) => {
+              return (
+                <li key={i}>
+                  name: {list.name}
+                  age: {list.age}
+                  school: {list.school}
+                </li>
+              )
+            })
+          }
+        </ul>
+      )
+    ]
+  }
+}
