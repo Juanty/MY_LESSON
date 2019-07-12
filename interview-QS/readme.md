@@ -49,3 +49,18 @@
 # Q7. __proto__ 和 prototype 关联
     __proto__ 是每一个实例都有的属性，可以访问[prototype] 属性，
     实例的__proto__与其构造函数的prototype指向的是同一个对象
+
+# Q8. parseInt
+  https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+
+# Q9. 排序
+  1. 冒泡排序：
+  相邻元素的比较，一次外层循环 将一个数排好，
+  每次内层循环要执行 len-i-1
+  时间复杂度：n²
+  2. 快速排序：递归
+  时间复杂度：nlogN
+  3. 中序遍历：
+  [1, null, 2, 3]
+
+# Q10. 
