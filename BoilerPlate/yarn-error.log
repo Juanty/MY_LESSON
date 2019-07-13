@@ -1,0 +1,56 @@
+Arguments: 
+  F:\WEB\Node.js\node.exe F:\WEB\Node.js\node_global\node_modules\yarn\bin\yarn.js add @types/react @types/react-dom -D
+
+PATH: 
+  F:\WEB\Git\mingw64\bin;F:\WEB\Git\usr\bin;C:\Users\54197\bin;C:\Program Files (x86)\Common Files\Intel\Shared Files\cpp\bin\Intel64;F:\oracle\product\10.2.0\db_4\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Lenovo\FusionEngine;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\WINDOWS\System32\OpenSSH;C:\Program Files\MySQL\MySQL Server 5.7\bin;C:\wamp\bin\mysql\mysql5.6.12\bin;F:\WEB\Git\usr\bin\bash.exe;F:\WEB\Node.js;F:\WEB\Node.js\node_cache\node_modules\stylus\bin;C:\Program Files\Java\jdk1.8.0_131\bin;F:\Microsoft VS Code\bin;C:\Users\54197\AppData\Local\Microsoft\WindowsApps;F:\WEB\Node.js\node_global
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  10.15.3
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'C:\Users\54197\AppData\Local\Yarn\Cache\v4\npm-caniuse-db-1.0.30000978-6c71237ff5e2b759bc52496f560e2f6287e90a28\node_modules\caniuse-db\.yarn-tarball.tgz'
+
+npm manifest: 
+  {
+    "name": "reactboilerplate",
+    "version": "1.0.0",
+    "description": "sample working with React, Typescript and Webpack",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "webpack-dev-server  --mode development --inline --hot --open",
+      "build": "webpack  --mode development"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "awesome-typescript-loader": "^5.0.0",
+      "babel-core": "^6.26.3",
+      "babel-preset-env": "^1.7.0",
+      "css-loader": "^0.28.11",
+      "file-loader": "^1.1.11",
+      "html-webpack-plugin": "^3.2.0",
+      "mini-css-extract-plugin": "^0.4.0",
+      "style-loader": "^0.21.0",
+      "typescript": "^2.8.3",
+      "url-loader": "^1.0.1",
+      "webpack": "^4.8.1",
+      "webpack-cli": "3.2.3",
+      "webpack-dev-server": "^3.1.4"
+    },
+    "dependencies": {
+      "bootstrap": "^4.1.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
