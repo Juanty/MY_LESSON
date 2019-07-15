@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="module">
+    // 引入
+    import obj from './a.js';
+    // 进行解构
+    const {a, b} = obj;
+
+    // 命名导入
+    import { c, d } from './a.js';
+    
+    // 错误用法：
+    // import { a, b } from './a.js';
+  </script>
+</body>
+</html>
