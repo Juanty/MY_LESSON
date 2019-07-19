@@ -2,7 +2,7 @@
   async 函数就是 Generator 函数的语法糖。
 
 ## generate 函数
-···js
+```js
   function* test () {
       let a = yield 1;
       console.log(a);
@@ -13,12 +13,13 @@
     }
     // 惰性的
     var g = test();
-···
-  通过g.next() 一步一步调用
-  每一步调用 执行到 yield 关键词
-  通过传参 可作为上一个 yield 语句的返回值
+```
+  通过g.next() 一步一步调用  
+  每一步调用 执行到 yield 关键词  
+  通过传参 可作为上一个 yield 语句的返回值  
 
-## 
+```
 {
  test: /\
 }
+```
