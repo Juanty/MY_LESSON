@@ -17,7 +17,7 @@ axios.interceptors.request.use(
     // 即使本地存在token，也有可能token是过期的，所以在拦截器总要返回状态进行判断
     // const token = store.state.token
     // token && (config.header.Authorization = token)
-    config.header['Context-Type'] = 'application/x-www-form-urlencoded'
+    config.headers['Context-Type'] = 'application/x-www-form-urlencoded'
     return config
   },
   error => {
