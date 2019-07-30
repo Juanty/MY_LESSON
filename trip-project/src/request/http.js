@@ -7,9 +7,9 @@ import store from '../store/index.js'
 let tmpTrip = store.state.trip
 
 axios.defaults.timeout = 10000
-axios.defaults.withCredentials = false // 表示跨域请求时候需要使用的凭证
+axios.defaults.withCredentials = false // 表示跨域请求时候需要使用的凭证，默认否
 
-// 请求拦截器
+// 请求拦截
 axios.interceptors.request.use(
   config => {
     // 每次发送请求之前判断一下vuex中是否存在token
@@ -17,7 +17,7 @@ axios.interceptors.request.use(
     // 即使本地存在token，也有可能token是过期的，所以在拦截器总要返回状态进行判断
     // const token = store.state.token
     // token && (config.header.Authorization = token)
-    config.headers['Context-Type'] = 'application/x-www-form-urlencoded'
+    config.headers['Content-Type'] = 'application/x-www-form-urlencoded'
     return config
   },
   error => {

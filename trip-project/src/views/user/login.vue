@@ -32,6 +32,7 @@
 
 <script>
 import { Toast } from 'mand-mobile'
+import { mapActions } from 'vuex'
 export default {
   name: 'Login',
   data () {
@@ -56,12 +57,14 @@ export default {
         this.userData = res.data.data
         let tmpUser = JSON.stringify(this.userData)
         console.log(res.data.data)
-        // 登录信息存到本地
         localStorage.setItem('user', tmpUser)
         // 存到vuex里面
+        this.setUser(this.userData)
         Toast.succeed(`欢迎回来，${this.userData.name}`, 1500)
+        this.$router.push({path: '/trip'})
       })
-    }
+    },
+    ...mapActions(['setUser', 'setUserData'])
   }
 }
 </script>
