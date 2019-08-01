@@ -47,8 +47,8 @@
 ### Q6. 防抖节流函数原理 
 
 ### Q7. __proto__ 和 prototype 关联
-    __proto__ 是每一个实例都有的属性，可以访问[prototype] 属性，   
-    实例的__proto__与其构造函数的prototype指向的是同一个对象   
+  __proto__ 是每一个实例都有的属性，可以访问[prototype] 属性，  
+  实例的__proto__与其构造函数的prototype指向的是同一个对象   
 
 ### Q8. parseInt
   https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/parseInt    
@@ -63,4 +63,37 @@
   3. 中序遍历：   
   [1, null, 2, 3]    
 
-### Q10.   
+### Q10. 
+
+### Q11.  
+
+### Q12(1). get 和 post 请求在缓存方面的的区别
+  - get 请求类似于查找的过程，用户获取数据，可以不用每次都与数据库连接，所以可以使用缓存   
+    post不同，post 一般做的是修改和删除数据的工作，所以必须与数据库交互，所以不能使用缓存   
+    因此get 请求更适合于请求缓存   
+  - url长度限制：  
+    http协议并没有限制url的长度，是浏览器或者web浏览器做了url长度的限制，并且只针对于get请求做的限制   
+  - IE: 2803   
+    Firefox: 65536   
+    Chrome: 8182   
+    Safari: 80000   
+    Opera: 190000  
+### Q12(2). 前端事件流
+  在DOM标准的事件模型中，事件流包括下面几个阶段：
+  1. 事件捕获阶段
+  2. 处于目标阶段
+  3. 事件冒泡阶段
+  addEventListener第三个参数，为true时捕获，false时冒泡，默认是false  (IE只支持事件冒泡)
+### Q12(3). 图片的懒加载和预加载的区别
+  预加载：提前加载图片时，当用户需要查看图片时可直接从本地缓存中渲染  
+  懒加载：最为服务器的前端优化，减少请求或延迟请求   
+  所以懒加载对服务器有一定的缓解压力的作用，预加载则会增加服务器的压力
+### Q12(4). js中的各种位置
+  1. clientHeight: 表示可视区域的高度，不包含border和滚动条
+  2. offsetHeight: 表示可视区域的高度，包含border和滚动条
+  3. scorllHeight: 表示所有区域的高度，包含因为滚动被隐藏的部分
+  4. clientTop: 表示边框border的厚度，在未指定的情况下一般为0
+  5. scrollTop: 滚动后被隐藏的高度
+  
+### Q13. js拖拽功能的实现
+
