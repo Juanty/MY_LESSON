@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #placeholder {
+      width: 15%;
+    }
+  </style>
+</head>
+<body>
+  <h1>showPic</h1>
+  <ul>
+    <li><a href="images/bgc01.jpg" onclick="showPic(this); return false;" title="bgc01">bgc01</a></li>
+    <li><a href="images/bgc02.jpg" onclick="showPic(this); return false;" title="bgc02">bgc02</a></li>
+    <li><a href="images/bgc03.jpg" onclick="showPic(this); return false;" title="bgc03">bgc03</a></li>
+    <li><a href="images/bgc04.jpg" onclick="showPic(this); return false;" title="bgc04">bgc04</a></li>
+  </ul>
+  <img id="placeholder" src="images/bgc05.jpg" alt="bgc05" />
+  <p id="description">Choose an image.</p>
+  <script src="showPic.js"></script>
+</body>
+</html>
