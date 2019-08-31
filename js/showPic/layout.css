@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #333;
+  background-color: #ccc;
+  margin: 1em 10%;
+}
+
+h1 {
+  background-color: transparent;
+}
+
+a {
+  color: #c60;
+  background-color: transparent;
+  font-weight: bold;
+  text-decoration: none;  
+}
+
+li {
+  float: left;
+  padding: 1em;
+  list-style: none;
+}
+
+#imageGallery {
+  list-style: none;
+}
+
+#imageGallery li {
+  display: inline;
+}
