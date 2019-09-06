@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .one {
+      /* 文档流 文字标签将 父元素 撑起来了 */
+      background: pink;
+      overflow: hidden;
+    }
+    .two {
+      /* 离开了文档流 */
+      float: left;
+    }
+    /* .cf:after {
+      content: '';
+      display: block;
+      clear: both;
+    } */
+
+  </style>
+</head>
+<body>
+  <!-- 文档流 遇到 float position: absolute; 就会离开文档流 -->
+  <div class="one cf">
+    <div class="two">hello world</div>
+  </div>
+  你好世界！
+</body>
+</html>
